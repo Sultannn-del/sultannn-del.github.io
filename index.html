@@ -1,0 +1,640 @@
+FF<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaza Genocide - Witness the Massacre</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Blood rain effect */
+        .blood-drop {
+            position: fixed;
+            width: 3px;
+            height: 25px;
+            background-color: #8a0303;
+            opacity: 0.7;
+            z-index: 9999;
+            animation: fall linear forwards;
+            pointer-events: none;
+            filter: drop-shadow(0 0 5px #ff0000);
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Flashing red alert */
+        @keyframes redAlert {
+            0% { background-color: rgba(138, 3, 3, 0.1); }
+            50% { background-color: rgba(138, 3, 3, 0.5); }
+            100% { background-color: rgba(138, 3, 3, 0.1); }
+        }
+
+        .red-alert {
+            animation: redAlert 2s infinite;
+        }
+
+        /* Header with graphic background */
+        header {
+            height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://www.al-monitor.com/sites/default/files/styles/article_hero_medium/public/almpics/2015/07/RTX17PKK.jpg/RTX17PKK.jpg?h=f7822858&itok=61suhJmI') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 800px;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #8a0303;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #8a0303;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #ff0000;
+        }
+
+        .casualty-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 2rem 0;
+            color: #fff;
+            background-color: rgba(138, 3, 3, 0.5);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .quran-verse {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-left: 5px solid #8a0303;
+            color: #fff;
+        }
+
+        .donate-btn {
+            display: inline-block;
+            background-color: #8a0303;
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #fff;
+            transition: all 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            background-color: #ff0000;
+            transform: scale(1.05);
+        }
+
+        /* Graphic content warning */
+        .content-warning {
+            background-color: #000;
+            color: #8a0303;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.5rem;
+            border-top: 3px solid #8a0303;
+            border-bottom: 3px solid #8a0303;
+            text-transform: uppercase;
+        }
+
+        /* Horrific image gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: grayscale(30%);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            color: white;
+            padding: 2rem 1rem 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Screaming audio */
+        .audio-section {
+            background-color: #000;
+            padding: 3rem 1rem;
+            text-align: center;
+            border-top: 3px solid #8a0303;
+            border-bottom: 3px solid #8a0303;
+        }
+
+        .audio-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #8a0303;
+            text-transform: uppercase;
+        }
+
+        /* Boycott section */
+        .products-section {
+            background-color: #000;
+            padding: 3rem 1rem;
+            border-bottom: 3px solid #8a0303;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #8a0303;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: #111;
+            border-radius: 0;
+            overflow: hidden;
+            border: 1px solid #8a0303;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(138, 3, 3, 0.5);
+        }
+
+        .product-logo {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: #000;
+        }
+
+        .product-logo img {
+            max-height: 80%;
+            max-width: 80%;
+            object-fit: contain;
+            filter: brightness(0.8);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+            background-color: #000;
+        }
+
+        .product-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .product-alternative {
+            font-size: 1rem;
+            color: #8a0303;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 3rem 1rem;
+            border-top: 3px solid #8a0303;
+        }
+
+        .social-links {
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: #8a0303;
+            margin: 0 1rem;
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff0000;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .casualty-counter {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        /* Banned Products Section */
+.banned-section {
+    background-color: #000;
+    padding: 3rem 1rem;
+    border-top: 3px solid #8a0303;
+    border-bottom: 3px solid #8a0303;
+}
+
+.banned-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background-color: #111;
+    padding: 1.5rem;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(138, 3, 3, 0.5);
+}
+
+.category-card h3 {
+    color: #8a0303;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.8rem;
+}
+
+.brand-name {
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #333;
+    transition: all 0.2s ease;
+}
+
+.brand-name:hover {
+    color: #8a0303;
+    border-bottom-color: #8a0303;
+    transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .brands-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .category-card h3 {
+        font-size: 1.1rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>GAZA GENOCIDE</h1>
+            <div class="casualty-counter" id="casualty-count">Loading death toll...</div>
+            <div class="quran-verse" id="quran-verse"></div>
+            <a href="https://www.dawateislami.net/onlinedonation/?gad_source=1&gad_campaignid=21896169769&gbraid=0AAAAA-ItMLmyZUkhra0GLCREAYVxyOxr2&gclid=CjwKCAjw6NrBBhB6EiwAvnT_rqOpws7tgg47EaFUK9Zgr_gDsMcekLq7DHJnDRcZFd4hKpxGOq9M6BoCMQ0QAvD_BwE" class="donate-btn">Stop the Killing</a>
+        </div>
+    </header>
+
+    <div class="content-warning">
+        WARNING: GRAPHIC CONTENT - ACTUAL FOOTAGE OF ISRAELI WAR CRIMES
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://www.aljazeera.com/wp-content/uploads/2023/11/AP23319415686048-1700088790.jpg?fit=1170%2C780&quality=80" alt="Dead Palestinian children">
+            <div class="gallery-caption">Palestinian children killed in Israeli airstrikes</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://www.aljazeera.com/wp-content/uploads/2023/10/GettyImages-1754659805-1698211766.jpg?resize=1800%2C1800" alt="Traumatized children">
+            <div class="gallery-caption">Children left homeless and traumatized by Israeli attacks</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://cdn-images.the-express.com/img/dynamic/12/590x/secondary/289398.jpg?r=1732291223473" alt="Destroyed buildings">
+            <div class="gallery-caption">Entire neighborhoods reduced to rubble by Israeli bombs</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.dailymail.co.uk/i/pix/2014/07/19/article-2698150-1FCBFB5700000578-566_964x672.jpg" alt="Mourning families">
+            <div class="gallery-caption">Palestinian families mourn their murdered loved ones</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.guim.co.uk/img/media/5f690a74be09903993f07c03e34851b745c38d5b/0_99_2970_1782/master/2970.jpg?width=465&dpr=1&s=none&crop=none" alt="Hospital attacks">
+            <div class="gallery-caption">Israeli attacks on hospitals violate international law</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://static01.nyt.com/images/2025/04/30/multimedia/30int-gaza-humanitarian-ktwg-promo/30int-gaza-humanitarian-ktwg-mediumSquareAt3X.jpg" alt="Starvation crisis">
+            <div class="gallery-caption">Israel blocks food and medicine - children starve to death</div>
+        </div>
+    </div>
+
+    <div class="audio-section">
+        <h2 class="audio-title">LISTEN TO THE SCREAMS</h2>
+        <audio controls autoplay loop>
+            <source src="videoplayback.m4a" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <p style="margin-top: 1rem; color: #8a0303;">This is what genocide sounds like</p>
+    </div>
+
+    <section class="products-section">
+        <h2 class="section-title">BOYCOTT ISRAELI TERROR</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: #8a0303; font-size: 1.2rem;">
+            These companies fund the genocide. Boycott them all.
+        </p>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlbJn8oOk1hJJwCgCW_mdxgkhVXn-H-00XRQ&s" alt="SodaStream">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">SodaStream</div>
+                    <div class="product-alternative">Made in illegal settlements</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuJAxTjaLLPAVavJg3V50ZBJyab0T1oVEJ3w&s" alt="Mobileye">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Mobileye</div>
+                    <div class="product-alternative">Used in military vehicles</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-logo">
+                    <img src="https://cdn.nishtyainfotech.com/content/jobaaj/company_logo/Teva_Pharmaceuticals3004581Teva%20Pharmaceuticals.webp" alt="Teva Pharmaceuticals">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Teva Pharma</div>
+                    <div class="product-alternative">Supports Israeli military</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVXhmXdFr-zeKlohm8y_MM6ICj5xXTB-L78Q&s" alt="Check Point">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Check Point</div>
+                    <div class="product-alternative">Military cybersecurity</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Add this section after the products-grid section in your HTML -->
+<section class="banned-section">
+    <h2 class="section-title">BOYCOTT THESE GENOCIDE-SUPPORTING BRANDS</h2>
+    <p style="text-align: center; margin-bottom: 2rem; color: #8a0303; font-size: 1.2rem;">
+        These companies directly or indirectly fund Israeli war crimes. Reject them all.
+    </p>
+
+    <div class="banned-categories">
+        <!-- Restaurants -->
+        <div class="category-card" style="border-left: 5px solid #8a0303;">
+            <h3>❌ Restaurants</h3>
+            <div class="brands-grid">
+                <span class="brand-name">KFC</span>
+                <span class="brand-name">McDonald's</span>
+                <span class="brand-name">Pizza Hut</span>
+                <span class="brand-name">Subway</span>
+                <span class="brand-name">Burger King</span>
+                <span class="brand-name">Hardees</span>
+                <span class="brand-name">Baskin Robbins</span>
+            </div>
+        </div>
+
+        <!-- Beverages -->
+        <div class="category-card" style="border-left: 5px solid #8a0303;">
+            <h3>❌ Beverages</h3>
+            <div class="brands-grid">
+                <span class="brand-name">Coca Cola</span>
+                <span class="brand-name">Pepsi</span>
+                <span class="brand-name">7-Up</span>
+                <span class="brand-name">Fanta</span>
+                <span class="brand-name">Sprite</span>
+                <span class="brand-name">Mirinda</span>
+                <span class="brand-name">Mountain Dew</span>
+            </div>
+        </div>
+
+        <!-- Food Products -->
+        <div class="category-card" style="border-left: 5px solid #8a0303;">
+            <h3>❌ Food Products</h3>
+            <div class="brands-grid">
+                <span class="brand-name">Maggi</span>
+                <span class="brand-name">Knorr</span>
+                <span class="brand-name">Lays</span>
+                <span class="brand-name">Cheetos</span>
+                <span class="brand-name">Kurkure</span>
+                <span class="brand-name">Pringles</span>
+                <span class="brand-name">Doritos</span>
+            </div>
+        </div>
+
+        <!-- Personal Care -->
+        <div class="category-card" style="border-left: 5px solid #8a0303;">
+            <h3>❌ Personal Care</h3>
+            <div class="brands-grid">
+                <span class="brand-name">Dove</span>
+                <span class="brand-name">Sunsilk</span>
+                <span class="brand-name">Pantene</span>
+                <span class="brand-name">L'Oréal</span>
+                <span class="brand-name">Colgate</span>
+                <span class="brand-name">Lux</span>
+                <span class="brand-name">Nivea</span>
+            </div>
+        </div>
+
+        <!-- Add more categories as needed -->
+    </div>
+</section>
+    <footer>
+        <h3>THE WORLD WATCHES AS PALESTINE BURNS</h3>
+        <p style="margin: 1rem 0; color: #8a0303;">Silence is complicity. Speak out now.</p>
+        
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 0.9rem;">
+            "First they came for the Palestinians, and I did not speak out..."
+            <br>
+            With love by S U L T A N &nbsp; A H M A D ❤️
+        </p>
+    </footer>
+
+    <script>
+        // More intense verses
+        const verses = [
+            "The screams of Palestinian children reach the heavens while the world stays silent.",
+            "40,000 dead and counting - when will the world say 'enough'?",
+            "Every 10 minutes a Palestinian child dies from Israeli bombs or starvation.",
+            "This is not war - this is genocide in live broadcast.",
+            "The blood of martyrs stains the hands of all who stay silent."
+        ];
+        
+        let verseIndex = 0;
+        function updateVerse() {
+            document.getElementById("quran-verse").innerText = verses[verseIndex];
+            verseIndex = (verseIndex + 1) % verses.length;
+        }
+
+        // Blood drop animation - more intense
+        function createBloodDrop() {
+            const drop = document.createElement("div");
+            drop.className = "blood-drop";
+            drop.style.left = Math.random() * window.innerWidth + "px";
+            drop.style.animationDuration = 2 + Math.random() * 3 + "s";
+            drop.style.opacity = 0.5 + Math.random() * 0.5;
+            document.body.appendChild(drop);
+            setTimeout(() => drop.remove(), 5000);
+        }
+
+        // Casualty counter with red alert
+        let lastCasualtyCount = 0;
+        
+        async function fetchCasualties() {
+            try {
+                const response = await fetch("https://data.techforpalestine.org/api/v2/casualties_daily.json");
+                const data = await response.json();
+                const latestCount = data[data.length - 1].killed;
+                const counterElement = document.getElementById("casualty-count");
+                
+                counterElement.innerText = latestCount.toLocaleString() + " PALESTINIANS MURDERED";
+                
+                // Red alert if count increases
+                if (lastCasualtyCount > 0 && latestCount > lastCasualtyCount) {
+                    counterElement.classList.add("red-alert");
+                    setTimeout(() => {
+                        counterElement.classList.remove("red-alert");
+                    }, 2000);
+                    
+                    // Show notification if permitted
+                    if (Notification.permission === "granted") {
+                        new Notification("DEATH TOLL RISING", {
+                            body: `Israeli forces have killed ${latestCount - lastCasualtyCount} more Palestinians. Total: ${latestCount}`,
+                            icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Palestine.svg/1200px-Flag_of_Palestine.svg.png"
+                        });
+                    }
+                }
+                
+                lastCasualtyCount = latestCount;
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                document.getElementById("casualty-count").innerText = "DEATH TOLL UNKNOWN - ISRAEL HIDES ITS CRIMES";
+            }
+        }
+
+        // Request notification permission immediately
+        if (Notification.permission !== "denied") {
+            Notification.requestPermission();
+        }
+
+        // Initialize everything
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchCasualties();
+            updateVerse();
+            
+            // More frequent blood drops
+            setInterval(createBloodDrop, 300);
+            
+            // Play audio automatically (muted by browser but shows controls)
+            document.querySelector("audio").volume = 0.5;
+        });
+
+        // Update more frequently
+        setInterval(fetchCasualties, 30000); // Every 30 seconds
+        setInterval(updateVerse, 8000); // Rotate verses every 8 seconds
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>
