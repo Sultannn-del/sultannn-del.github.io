@@ -1,13 +1,253 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>sport streaming hub</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Lynn - Age Verification</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff9eb7;
+            --hot-pink: #ff6b8b;
+            --light-pink: #ffd6e7;
+            --white: #ffffff;
+            --soft-shadow: 0 4px 15px rgba(255, 107, 139, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-pink);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5a3a4a;
+            overflow: hidden;
+        }
+        
+        /* Floating elements background */
+        .floating-element {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: float 15s linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .age-verification {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: var(--soft-shadow);
+            position: relative;
+            z-index: 10;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--hot-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            border: 5px solid var(--white);
+            box-shadow: var(--soft-shadow);
+        }
+        
+        .message {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #5a3a4a;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--soft-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-confirm {
+            background: var(--hot-pink);
+            color: var(--white);
+        }
+        
+        .btn-deny {
+            background: var(--white);
+            color: var(--hot-pink);
+            border: 2px solid var(--hot-pink);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #7a5a6a;
+            opacity: 0.8;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .age-verification {
+                padding: 30px 20px;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-	FOOTBALL <br>
-<iframe frameborder="0" marginheight="0" marginwidth="0" height="520" src="https://cdn.crichd-stop.ru/embed2.php?id=skyfb" name="iframe_a" scrolling="no" width="640">Your Browser Do not Support Iframe</iframe>
+    <!-- Floating elements background -->
+    <div id="floating-container"></div>
+    
+    <div class="age-verification">
+        <div class="logo">Bella Lynn <i class="ri-flower-line"></i></div>
+        <div class="message">
+            To access my exclusive content, you must be 18 years or older
+        </div>
+        <img src="logo.png" class="profile-img" alt="Bella Lynn">
+        <div class="message">
+            Please confirm your age to continue
+        </div>
+        <div class="buttons">
+            <a href="Social-hub.html"><button class="btn btn-confirm" id="confirmBtn">I'm 18 or older</button></a>
+            <button class="btn btn-deny" id="denyBtn">I'm under 18</button>
+        </div>
+        <div class="footer-note">
+            By continuing, you confirm you meet the age requirements for this content
+        </div>
+    </div>
 
+    <script>
+        // Create floating elements
+        function createFloatingElements() {
+            const container = document.getElementById('floating-container');
+            const elements = ['heart', 'star', 'flower', 'cloud', 'sparkle'];
+            
+            for (let i = 0; i < 12; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Use simple icons instead of emojis
+                const icon = elements[Math.floor(Math.random() * elements.length)];
+                if (icon === 'flower') {
+                    element.innerHTML = '<i class="ri-flower-line"></i>';
+                } else if (icon === 'cloud') {
+                    element.innerHTML = '<i class="ri-cloud-line"></i>';
+                } else {
+                    element.innerHTML = `<i class="fas fa-${icon}"></i>`;
+                }
+                
+                element.style.color = `hsl(${Math.random() * 30 + 330}, 100%, 75%)`;
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.bottom = -50 + 'px';
+                element.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                element.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                element.style.animationDelay = (Math.random() * 5) + 's';
+                container.appendChild(element);
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createFloatingElements();
+            
+            document.getElementById('confirmBtn').addEventListener('click', () => {
+                window.location.href = "social-hub.html";
+            });
+            
+            document.getElementById('denyBtn').addEventListener('click', () => {
+                alert('You must be 18 or older to access this content.');
+                window.location.href = "https://www.google.com";
+            });
+            
+            // Add hover effect to buttons
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 8px 20px rgba(255, 107, 139, 0.3)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'var(--soft-shadow)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

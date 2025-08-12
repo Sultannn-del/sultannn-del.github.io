@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Lynn - Kawaii Seduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff9eb7;
+            --hot-pink: #ff6b8b;
+            --light-pink: #ffd6e7;
+            --white: #ffffff;
+            --soft-shadow: 0 4px 15px rgba(255, 107, 139, 0.2);
+            --pastel-purple: #d4b8ff;
+            --pastel-blue: #b8e1ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-pink);
+            min-height: 100vh;
+            color: #5a3a4a;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255,214,231,0.3) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(212,184,255,0.3) 0%, transparent 20%);
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 214, 231, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--hot-pink);
+            border-radius: 10px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--hot-pink);
+            text-shadow: var(--soft-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            color: #7a5a6a;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        /* Profile */
+        .profile-container {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 30px;
+            position: relative;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        
+        .profile {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: 
+                var(--soft-shadow),
+                0 0 0 10px rgba(255, 214, 231, 0.5),
+                0 0 0 15px rgba(212, 184, 255, 0.3);
+            position: relative;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        
+        .profile:hover {
+            transform: scale(1.05);
+            filter: brightness(1.05);
+        }
+        
+        /* Floating decorative elements */
+        .floating-icon {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.7;
+            animation: vibrate 5s ease-in-out infinite;
+        }
+        
+        @keyframes vibrate {
+            0%, 100% { transform: translate(0, 0) rotate(0); }
+            20% { transform: translate(-3px, 2px) rotate(-1deg); }
+            40% { transform: translate(2px, -1px) rotate(1deg); }
+            60% { transform: translate(-2px, 3px) rotate(0); }
+            80% { transform: translate(3px, -2px) rotate(1deg); }
+        }
+        
+        /* Seduction Meter */
+        .seduction-meter {
+            width: 80%;
+            max-width: 400px;
+            margin: 30px auto;
+            background: rgba(255,255,255,0.7);
+            border-radius: 50px;
+            height: 20px;
+            overflow: hidden;
+            box-shadow: var(--soft-shadow);
+        }
+        
+        .meter-fill {
+            height: 100%;
+            width: 85%;
+            background: linear-gradient(90deg, var(--hot-pink), #ff3d6e);
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.9; }
+            100% { opacity: 1; }
+        }
+        
+        .meter-text {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--hot-pink);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        /* Stats */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: var(--soft-shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--hot-pink);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #7a5a6a;
+        }
+        
+        /* Gallery */
+        .gallery-container {
+            width: 100%;
+            overflow: hidden;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .gallery-track {
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+            animation: scroll 30s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 6)); }
+        }
+        
+        .gallery-item {
+            min-width: 240px;
+            height: 320px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--soft-shadow);
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.03);
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--hot-pink);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            background: rgba(255, 255, 255, 0.95);
+            padding-bottom: 20px;
+        }
+        
+        /* Image Popup */
+        .image-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .popup-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .close-popup {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: var(--hot-pink);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+        }
+        
+        /* Social Links - Optimized for Mobile */
+        .social-section {
+            margin: 60px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--hot-pink);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--hot-pink);
+            border-radius: 3px;
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--soft-shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            z-index: -1;
+        }
+        
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 107, 139, 0.3);
+        }
+        
+        .social-card:hover::before {
+            transform: translateY(0);
+        }
+        
+        .social-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--hot-pink);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .social-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #5a3a4a;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .social-username {
+            font-size: 1rem;
+            color: #7a5a6a;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .social-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--hot-pink);
+            color: var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Platform hover colors */
+        .instagram:hover { background: #e1306c; }
+        .onlyfans:hover { background: #00aff0; }
+        .twitter:hover { background: #1da1f2; }
+        .tiktok:hover { background: #fe2c55; }
+        .youtube:hover { background: #ff0000; }
+        .facebook:hover { background: #1877f2; }
+        .twitch:hover { background: #9146ff; }
+        
+        .instagram:hover .social-name,
+        .instagram:hover .social-username,
+        .instagram:hover .social-icon,
+        .onlyfans:hover .social-name,
+        .onlyfans:hover .social-username,
+        .onlyfans:hover .social-icon,
+        .twitter:hover .social-name,
+        .twitter:hover .social-username,
+        .twitter:hover .social-icon,
+        .tiktok:hover .social-name,
+        .tiktok:hover .social-username,
+        .tiktok:hover .social-icon,
+        .youtube:hover .social-name,
+        .youtube:hover .social-username,
+        .youtube:hover .social-icon,
+        .facebook:hover .social-name,
+        .facebook:hover .social-username,
+        .facebook:hover .social-icon,
+        .twitch:hover .social-name,
+        .twitch:hover .social-username,
+        .twitch:hover .social-icon {
+            color: white;
+        }
+        
+        /* Mobile Optimization for Social Section */
+        @media (max-width: 768px) {
+            .social-section {
+                height: 80vh;
+                margin: 30px 0;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+                overflow-y: auto;
+                padding: 10px;
+                margin: 0 auto ;
+                width: 100%;
+                gap: 15px;
+            }
+            
+            .social-card {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                padding: 15px;
+                min-height: 80px;
+            }
+            
+            .footer {
+                margin-top: 20vh;
+            }
+
+
+            .social-icon {
+                font-size: 1.8rem;
+                margin-bottom: 0;
+                margin-right: 15px;
+                min-width: 40px;
+            }
+            .social-username {
+                display: none;
+            }
+            
+            .social-name {
+                font-size: 1.1rem;
+                margin-bottom: 5px;
+            }
+            
+            .social-username {
+                font-size: 0.9rem;
+                margin-bottom: 0;
+            }
+            
+            .social-btn {
+                margin-left: auto;
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .social-card::before {
+                background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+            }
+        }
+        
+        /* Teaser Section */
+        .teaser-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin: 60px 0;
+            box-shadow: var(--soft-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .teaser-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--pastel-purple);
+            border-radius: 50%;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .teaser-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: var(--pastel-blue);
+            border-radius: 50%;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .teaser-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .teaser-title {
+            font-size: 2rem;
+            color: var(--hot-pink);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .teaser-text {
+            font-size: 1.1rem;
+            color: #5a3a4a;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .teaser-highlight {
+            color: var(--hot-pink);
+            font-weight: 600;
+        }
+        
+        /* Premium Section */
+        .premium-section {
+            background: linear-gradient(130deg, var(--hot-pink), #ff3d6e);
+            color: white;
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 107, 139, 0.4);
+        }
+        
+        .premium-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('merg.png') center/cover no-repeat;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .premium-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .premium-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .benefit-item {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 25px;
+            width: 220px;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        /* CTA Button */
+        .cta-btn {
+            padding: 15px 40px;
+            background: var(--white);
+            color: var(--hot-pink);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--soft-shadow);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 0;
+            font-size: 0.9rem;
+            color: #7a5a6a;
+            border-top: 1px solid rgba(255, 107, 139, 0.2);
+            position: relative;
+        }
+        
+        footer::before {
+            content: '♥';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--light-pink);
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            color: var(--hot-pink);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.8rem;
+            }
+            
+            .profile-container {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .premium-section {
+                padding: 30px 20px;
+            }
+            
+            .premium-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .gallery-item {
+                min-width: 180px;
+                height: 250px;
+            }
+            
+            .popup-img {
+                max-height: 60vh;
+            }
+            
+            .stats-container {
+                gap: 10px;
+            }
+            
+            .stat-item {
+                min-width: 100px;
+                padding: 15px;
+            }
+        }
+    </style>
+    <style>
+        /* Floating Images for Laptop Only */
+        .floating-bg-images {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .floating-bg-img {
+            position: fixed;
+            width: 30vh;
+            height: 30vh;
+            object-fit: cover;
+            border-radius: 15px;
+            opacity: 0.5;
+            filter: brightness(1.1);
+            animation: floatBg 15s ease-in-out infinite;
+        }
+
+        .floating-bg-img:nth-child(1) {
+            top: 10vh;
+            left: 5vw;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .floating-bg-img:nth-child(2) {
+            top: 15vh;
+            right: 5vw;
+            animation-delay: 3s;
+            animation-duration: 20s;
+        }
+
+        .floating-bg-img:nth-child(3) {
+            bottom: 15vh;
+            left: 8vw;
+            animation-delay: 6s;
+            animation-duration: 22s;
+        }
+
+        .floating-bg-img:nth-child(4) {
+            bottom: 10vh;
+            right: 8vw;
+            animation-delay: 9s;
+            animation-duration: 19s;
+        }
+
+        @keyframes floatBg {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+
+        /* Show only on laptop/desktop */
+        @media (min-width: 1024px) {
+            .floating-bg-images {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating decorative elements 
+    <div id="floating-icons"></div>
+    <div class="floating-bg-images">
+        <img src="1.png" class="floating-bg-img" alt="Decorative Image 1">
+        <img src="2.png" class="floating-bg-img" alt="Decorative Image 2">
+        <img src="3.png" class="floating-bg-img" alt="Decorative Image 3">
+        <img src="4.png" class="floating-bg-img" alt="Decorative Image 4">
+    </div>-->
+    <!-- Image Popup -->
+    <div class="image-popup" id="imagePopup">
+        <div class="popup-content">
+            <button class="close-popup" id="closePopup">&times;</button>
+            <img src="" alt="" class="popup-img" id="popupImage">
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class="logo">Bella Lynn <i class="ri-hearts-fill"></i></h1>
+            <p class="tagline">Your kawaii seduction queen ~</p>
+            
+            <div class="profile-container">
+                <img src="logo.png" alt="Bella Lynn" class="profile">
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">650K+</div>
+                    <div class="stat-label">Followers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10M+</div>
+                    <div class="stat-label">Likes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Kawaii</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Availability</div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Auto-scrolling Gallery -->
+        <div class="gallery-container">
+            <div class="gallery-track">
+                <div class="gallery-item" data-image="1.png">
+                    <img src="1.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Sweet Temptation</div>
+                </div>
+                <div class="gallery-item" data-image="2.png">
+                    <img src="2.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Playful Glances</div>
+                </div>
+                <div class="gallery-item" data-image="3.png">
+                    <img src="3.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Lingerie Dreams</div>
+                </div>
+                <div class="gallery-item" data-image="4.png">
+                    <img src="4.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Bedroom Eyes</div>
+                </div>
+                <div class="gallery-item" data-image="5.png">
+                    <img src="5.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Secret Desires</div>
+                </div>
+                <div class="gallery-item" data-image="6.png">
+                    <img src="6.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Forbidden Fruits</div>
+                </div>
+                <!-- Duplicate items for seamless looping -->
+                <div class="gallery-item" data-image="1.png">
+                    <img src="1.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Sweet Temptation</div>
+                </div>
+                <div class="gallery-item" data-image="2.png">
+                    <img src="2.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Playful Glances</div>
+                </div>
+                <div class="gallery-item" data-image="3.png">
+                    <img src="3.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Lingerie Dreams</div>
+                </div>
+                <div class="gallery-item" data-image="4.png">
+                    <img src="4.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Bedroom Eyes</div>
+                </div>
+                <div class="gallery-item" data-image="5.png">
+                    <img src="5.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Secret Desires</div>
+                </div>
+                <div class="gallery-item" data-image="6.png">
+                    <img src="6.png" alt="Bella Lynn" class="gallery-img">
+                    <div class="gallery-caption">Forbidden Fruits</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Premium Section -->
+        <div class="premium-section">
+            <h2 class="premium-title">Premium Experience</h2>
+            <p style="margin-bottom: 20px; position: relative;">Unlock my most exclusive content and personal interactions</p>
+            
+            <div class="premium-benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+                    <h3 class="benefit-title">Custom Content</h3>
+                    <p>Personalized just for you</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-key"></i></div>
+                    <h3 class="benefit-title">Private Access</h3>
+                    <p>See what others can't</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-comments"></i></div>
+                    <h3 class="benefit-title">1-on-1 Chats</h3>
+                    <p>Get to know me personally</p>
+                </div>
+            </div>
+            
+            <button class="cta-btn">Click Here To Join</button>
+        </div>
+        
+        <!-- Social Links - Optimized for Mobile -->
+        <div class="social-section">
+            <h2 class="section-title">Find Me On</h2>
+            <div class="social-grid">
+                <!-- Instagram -->
+                <div class="social-card instagram">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3 class="social-name">Instagram</h3>
+                    <p class="social-username">@bella_ lynn</p>
+                    <a href="https://instagram.com/bella.lynn" class="social-btn">Follow</a>
+                </div>
+                
+                <!-- OnlyFans -->
+                <div class="social-card onlyfans">
+                    <div class="social-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="social-name">OnlyFans</h3>
+                    <p class="social-username">Exclusive Content</p>
+                    <a href="https://onlyfans.com/bella.lynn" class="social-btn">Unlock</a>
+                </div>
+                
+                <!-- Twitter -->
+                <div class="social-card twitter">
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3 class="social-name">Twitter</h3>
+                    <p class="social-username">@bella_lynn</p>
+                    <a href="https://twitter.com/bella_lynn" class="social-btn">Follow</a>
+                </div>
+                
+                <!-- TikTok -->
+                <div class="social-card tiktok">
+                    <div class="social-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3 class="social-name">TikTok</h3>
+                    <p class="social-username">@bella.lynn</p>
+                    <a href="https://tiktok.com/@bella.lynn" class="social-btn">Follow</a>
+                </div>
+                
+                <!-- YouTube -->
+                <div class="social-card youtube">
+                    <div class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3 class="social-name">YouTube</h3>
+                    <p class="social-username">Bella Lynn</p>
+                    <a href="https://youtube.com/bella.lynn" class="social-btn">Subscribe</a>
+                </div>
+                
+                <!-- Facebook -->
+                <div class="social-card facebook">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3 class="social-name">Facebook</h3>
+                    <p class="social-username">Bella Lynn</p>
+                    <a href="https://facebook.com/bella.lynn" class="social-btn">Like</a>
+                </div>
+                
+                <!-- Twitch -->
+                <div class="social-card twitch">
+                    <div class="social-icon">
+                        <i class="fab fa-twitch"></i>
+                    </div>
+                    <h3 class="social-name">Twitch</h3>
+                    <p class="social-username">@bella.lynn</p>
+                    <a href="https://twitch.com/bella.lynn" class="social-btn">Follow</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <footer class="footer">
+            © 2025 Bella Lynn | All Rights Reserved |<br> Designed with <i class="fas fa-heart" style="color: var(--hot-pink);"></i>
+        </footer>
+    </div>
+
+    <script>
+        // Create floating decorative icons
+        function createFloatingIcons() {
+            const container = document.getElementById('floating-icons');
+            if (!container) return;
+            
+            container.innerHTML = ''; // Clear existing
+            
+            const icons = ['heart', 'star', 'flower', 'kiss-wink-heart'];
+            const colors = ['#ff9eb7', '#ff6b8b', '#d4b8ff', '#ffb8d9'];
+            const positions = [
+                { top: '10%', left: '5%', size: '30px', delay: '0s' },
+                { top: '20%', right: '8%', size: '40px', delay: '2s' },
+                { bottom: '15%', left: '10%', size: '25px', delay: '1s' },
+                { top: '30%', right: '5%', size: '35px', delay: '3s' }
+            ];
+            
+            positions.forEach((pos, index) => {
+                const icon = document.createElement('div');
+                icon.className = 'floating-icon';
+                icon.innerHTML = `<i class="fas fa-${icons[index]}"></i>`;
+                icon.style.color = colors[index];
+                icon.style.fontSize = pos.size;
+                icon.style.animation = `vibrate ${4 + Math.random() * 3}s ease-in-out infinite ${pos.delay}`;
+                
+                Object.keys(pos).forEach(key => {
+                    if (key !== 'size' && key !== 'delay') {
+                        icon.style[key] = pos[key];
+                    }
+                });
+                
+                container.appendChild(icon);
+            });
+        }
+
+        // Image Popup functionality
+        function setupImagePopup() {
+            const popup = document.getElementById('imagePopup');
+            const popupImg = document.getElementById('popupImage');
+            const closeBtn = document.getElementById('closePopup');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            if (!popup || !popupImg || !closeBtn || !galleryItems.length) return;
+            
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.getAttribute('data-image');
+                    if (imgSrc) {
+                        popupImg.src = imgSrc;
+                        popup.dataset.currentIndex = index;
+                        popup.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            closeBtn.addEventListener('click', () => {
+                popup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    popup.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (popup.style.display !== 'flex') return;
+                
+                const currentIndex = parseInt(popup.dataset.currentIndex || 0);
+                const items = Array.from(document.querySelectorAll('.gallery-item'));
+                
+                if (e.key === 'ArrowRight') {
+                    const nextIndex = (currentIndex + 1) % items.length;
+                    const nextImg = items[nextIndex].getAttribute('data-image');
+                    if (nextImg) {
+                        popupImg.src = nextImg;
+                        popup.dataset.currentIndex = nextIndex;
+                    }
+                } else if (e.key === 'ArrowLeft') {
+                    const prevIndex = (currentIndex - 1 + items.length) % items.length;
+                    const prevImg = items[prevIndex].getAttribute('data-image');
+                    if (prevImg) {
+                        popupImg.src = prevImg;
+                        popup.dataset.currentIndex = prevIndex;
+                    }
+                } else if (e.key === 'Escape') {
+                    popup.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Gallery hover effects
+        function setupGalleryHover() {
+            const galleryTracks = document.querySelectorAll('.gallery-track');
+            
+            galleryTracks.forEach(track => {
+                track.addEventListener('mouseenter', () => {
+                    track.style.animationPlayState = 'paused';
+                });
+                
+                track.addEventListener('mouseleave', () => {
+                    track.style.animationPlayState = 'running';
+                });
+            });
+        }
+
+        // Initialize all functions when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingIcons();
+            setupImagePopup();
+            setupGalleryHover();
+            
+            // Premium button heartbeat effect
+            const premiumBtn = document.querySelector('.premium-section .cta-btn');
+            if (premiumBtn) {
+                setInterval(() => {
+                    premiumBtn.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        premiumBtn.style.transform = 'scale(1)';
+                    }, 500);
+                }, 2000);
+            }
+            
+            // Social card hover effects
+            document.querySelectorAll('.social-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.social-icon');
+                    if (icon) icon.style.transform = 'scale(1.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.social-icon');
+                    if (icon) icon.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

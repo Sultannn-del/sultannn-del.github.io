@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Lynn - Premium Kawaii Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff6b8b;
+            --hot-pink: #ff1493;
+            --purple: #9d50bb;
+            --light-pink: #ffcce6;
+            --white: rgba(255, 255, 255, 0.9);
+            --gold: #ffd700;
+            --diamond: #b9f2ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* Premium scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--hot-pink), var(--purple));
+            border-radius: 10px;
+        }
+        
+        /* Kawaii floating elements - Enhanced */
+        .kawaii {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: float 15s linear infinite;
+            z-index: -1;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+        
+        .kawaii-sparkle {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 100;
+            animation: sparkle 2s ease-out forwards;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes sparkle {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 30px;
+            position: relative;
+        }
+        
+        /* Premium header with more animations */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .logo {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--hot-pink), var(--purple), var(--hot-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 20px rgba(255, 20, 147, .3);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--light-pink), transparent);
+            border-radius: 3px;
+        }
+        
+        .logo i {
+            font-size: 4rem;
+            animation: pulse 2s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--white);
+            opacity: 0.9;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        /* Enhanced profile section with more animations */
+        .profile-container {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 50px;
+            animation: floatProfile 6s ease-in-out infinite;
+        }
+        
+        @keyframes floatProfile {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .profile {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--white);
+            box-shadow: 0 25px 50px rgba(255, 107, 139, 0.5);
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        
+        .profile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 30px 60px rgba(255, 20, 147, 0.6);
+        }
+        
+        .profile::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border-radius: 50%;
+            border: 4px dashed var(--light-pink);
+            opacity: 0.7;
+            z-index: -1;
+            animation: spin 20s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .hearts {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: var(--hot-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.6);
+            animation: float-hearts 3s infinite ease-in-out;
+        }
+        
+        .heart-1 {
+            top: -25px;
+            right: -15px;
+            animation-delay: 0s;
+        }
+        
+        .heart-2 {
+            bottom: -20px;
+            left: -25px;
+            animation-delay: 0.5s;
+        }
+        
+        .heart-3 {
+            top: 50%;
+            right: -30px;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float-hearts {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+        }
+        
+        /* Premium Polaroid Gallery with more items */
+        .polaroid-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 60px 0;
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 20px 20px 60px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transform: rotate(-5deg);
+            transition: all 0.5s ease;
+            position: relative;
+            width: 320px;
+            height: 380px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .polaroid:nth-child(even) {
+            transform: rotate(5deg);
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.08);
+            box-shadow: 0 20px 50px rgba(255, 20, 147, 0.6);
+            z-index: 2;
+        }
+        
+        .polaroid-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            filter: blur(15px);
+            transition: all 0.6s ease;
+        }
+        
+        .polaroid:hover .polaroid-img {
+            filter: blur(0);
+            transform: scale(1.05);
+        }
+        
+        .polaroid-caption {
+            text-align: center;
+            color: var(--hot-pink);
+            font-weight: 700;
+            margin-top: 20px;
+            font-size: 1.4rem;
+            position: relative;
+            letter-spacing: 1px;
+        }
+        
+        .polaroid-caption::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--light-pink);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .polaroid:hover .polaroid-caption::after {
+            width: 100px;
+            background: var(--hot-pink);
+        }
+        
+        .polaroid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 107, 139, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            opacity: 1;
+            transition: all 0.6s ease;
+        }
+        
+        .polaroid:hover .polaroid-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .polaroid-overlay h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .polaroid-overlay p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .age-verify-btn {
+            padding: 12px 30px;
+            background: var(--white);
+            color: var(--hot-pink);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .age-verify-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+        
+        .age-verify-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+            background: var(--light-pink);
+        }
+        
+        .age-verify-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Video Showcase Section - New */
+        .video-showcase {
+            margin: 80px auto;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(to right, var(--hot-pink), var(--purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--light-pink), var(--hot-pink));
+            border-radius: 4px;
+        }
+        
+        .video-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .video-card {
+            width: 360px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            position: relative;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 60px rgba(255, 20, 147, 0.5);
+        }
+        
+        .video-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: all 0.5s ease;
+        }
+        
+        .video-card:hover .video-thumbnail {
+            filter: brightness(1);
+        }
+        
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--hot-pink);
+            font-size: 2rem;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+        
+        .video-card:hover .video-play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+            opacity: 1;
+            background: var(--white);
+        }
+        
+        .video-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .video-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .video-desc {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .video-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(45deg, var(--hot-pink), var(--purple));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .video-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 20, 147, 0.4);
+        }
+        
+        /* Premium Features Section - Enhanced */
+        .premium-features {
+            margin: 80px auto;
+            max-width: 1200px;
+            position: relative;
+        }
+        
+        .features-title {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(to right, var(--hot-pink), var(--purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+            position: relative;
+        }
+        
+        .features-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--light-pink), var(--hot-pink));
+            border-radius: 4px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(255, 20, 147, 0.4);
+            border-color: var(--light-pink);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+        }
+        
+        .feature-card:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2);
+            color: var(--light-pink);
+        }
+        
+        .feature-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .feature-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--light-pink);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-title::after {
+            transform: scaleX(1);
+        }
+        
+        .feature-desc {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .feature-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--hot-pink), var(--purple));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
+        }
+        
+        .feature-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--purple), var(--hot-pink));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .feature-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 20, 147, 0.6);
+        }
+        
+        .feature-btn:hover::before {
+            opacity: 1;
+        }
+        
+        /* New Exclusive Content Section */
+        .exclusive-content {
+            margin: 80px auto;
+            max-width: 1200px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .content-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(255, 20, 147, 0.5);
+            border-color: var(--light-pink);
+        }
+        
+        .content-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: all 0.5s ease;
+        }
+        
+        .content-card:hover .content-img {
+            filter: brightness(1);
+            transform: scale(1.05);
+        }
+        
+        .content-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .content-title {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+        
+        .content-desc {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .content-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Social Grid - Enhanced */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 80px;
+        }
+        
+        .social-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+            z-index: -1;
+        }
+        
+        .social-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 60px rgba(255, 20, 147, 0.4);
+        }
+        
+        .social-card:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .social-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .social-card:hover .social-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        .social-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--white);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .social-name::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--light-pink);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .social-card:hover .social-name::after {
+            transform: scaleX(1);
+        }
+        
+        .social-username {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+        
+        .social-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            min-width: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .social-btn:hover {
+            background: var(--white);
+            transform: scale(1.05);
+        }
+        
+        .social-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Platform specific styles with kawaii colors */
+        .instagram { 
+            background: rgba(225, 48, 108, 0.25);
+            border-color: rgba(225, 48, 108, 0.4);
+        }
+        .instagram .social-btn:hover { color: #e1306c; }
+        
+        .onlyfans { 
+            background: rgba(0, 175, 240, 0.25);
+            border-color: rgba(0, 175, 240, 0.4);
+        }
+        .onlyfans .social-btn:hover { color: #00aff0; }
+        
+        .twitter { 
+            background: rgba(29, 161, 242, 0.25);
+            border-color: rgba(29, 161, 242, 0.4);
+        }
+        .twitter .social-btn:hover { color: #1da1f2; }
+        
+        .tiktok { 
+            background: rgba(254, 44, 85, 0.25);
+            border-color: rgba(254, 44, 85, 0.4);
+        }
+        .tiktok .social-btn:hover { color: #fe2c55; }
+        
+        .youtube { 
+            background: rgba(255, 0, 0, 0.25);
+            border-color: rgba(255, 0, 0, 0.4);
+        }
+        .youtube .social-btn:hover { color: #ff0000; }
+        
+        .snapchat { 
+            background: rgba(255, 252, 0, 0.25);
+            border-color: rgba(255, 252, 0, 0.4);
+        }
+        .snapchat .social-btn:hover { color: #fffc00; }
+        
+        /* Premium CTA - Super Kawaii Enhanced */
+        .premium-cta {
+            margin: 100px auto;
+            text-align: center;
+            max-width: 900px;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 30px 70px rgba(255, 107, 139, 0.5);
+            position: relative;
+            overflow: hidden;
+            animation: pulseCTA 4s infinite alternate;
+        }
+        
+        @keyframes pulseCTA {
+            0% { transform: scale(1); box-shadow: 0 30px 70px rgba(255, 107, 139, 0.5); }
+            100% { transform: scale(1.02); box-shadow: 0 40px 80px rgba(255, 20, 147, 0.7); }
+        }
+        
+        .premium-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+            animation: rotate 20s linear infinite;
+        }
+        
+        .premium-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--hot-pink), var(--purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+        }
+        
+        .premium-text {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: var(--white);
+            opacity: 0.9;
+        }
+        
+        .premium-btn {
+            padding: 18px 50px;
+            background: linear-gradient(45deg, var(--hot-pink), var(--purple));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 35px rgba(255, 20, 147, 0.6);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--purple), var(--hot-pink));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .premium-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(255, 20, 147, 0.8);
+        }
+        
+        .premium-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .premium-btn i {
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .premium-btn:hover i {
+            transform: scale(1.3);
+        }
+        
+        /* Age Verification Modal - Enhanced */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .modal-content {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            animation: modalFadeIn 0.5s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, var(--hot-pink), var(--purple));
+        }
+        
+        .modal-title {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--hot-pink);
+            position: relative;
+        }
+        
+        .modal-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--light-pink);
+            border-radius: 4px;
+        }
+        
+        .modal-text {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .modal-btn {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 180px;
+        }
+        
+        .modal-confirm {
+            background: linear-gradient(45deg, var(--hot-pink), var(--purple));
+            color: white;
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
+        }
+        
+        .modal-deny {
+            background: #f1f1f1;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .modal-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .modal-btn:hover::before {
+            left: 100%;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 100px;
+            padding: 40px;
+            font-size: 1rem;
+            color: var(--white);
+            opacity: 0.8;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--light-pink), transparent);
+        }
+        
+        /* Glow effects - Enhanced */
+        .glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+            filter: blur(20px);
+            animation: pulse 8s infinite alternate;
+            z-index: -1;
+        }
+        
+        .glow-small {
+            width: 100px;
+            height: 100px;
+            filter: blur(10px);
+            animation: pulseSmall 5s infinite alternate;
+        }
+        
+        @keyframes pulseSmall {
+            0% { transform: scale(0.8); opacity: 0.3; }
+            100% { transform: scale(1.2); opacity: 0.1; }
+        }
+        
+        /* Diamond sparkle effect */
+        .diamond {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: var(--diamond);
+            transform: rotate(45deg);
+            opacity: 0;
+            animation: diamondSparkle 3s infinite;
+            filter: drop-shadow(0 0 5px var(--diamond));
+        }
+        
+        @keyframes diamondSparkle {
+            0% { opacity: 0; transform: rotate(45deg) scale(0.5); }
+            50% { opacity: 1; transform: rotate(45deg) scale(1); }
+            100% { opacity: 0; transform: rotate(45deg) scale(0.5); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+            
+            .logo {
+                font-size: 4rem;
+            }
+            
+            .social-grid, .features-grid, .content-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                padding: 50px 25px;
+            }
+            
+            .logo {
+                font-size: 3.5rem;
+            }
+            
+            .profile-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .polaroid {
+                width: 280px;
+                height: 340px;
+            }
+            
+            .polaroid-img {
+                height: 240px;
+            }
+            
+            .premium-cta {
+                padding: 50px 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+            
+            .profile-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .polaroid-gallery {
+                gap: 30px;
+            }
+            
+            .section-title, .features-title {
+                font-size: 2.5rem;
+            }
+            
+            .modal-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .modal-btn {
+                width: 100%;
+            }
+            
+            .premium-cta {
+                margin: 70px auto;
+                padding: 40px 30px;
+            }
+            
+            .premium-title {
+                font-size: 2.5rem;
+            }
+            
+            .premium-text {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .social-grid, .features-grid, .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .polaroid {
+                width: 260px;
+                height: 320px;
+            }
+            
+            .section-title, .features-title {
+                font-size: 2.2rem;
+            }
+            
+            .premium-cta {
+                padding: 30px 20px;
+            }
+            
+            .premium-title {
+                font-size: 2rem;
+            }
+            
+            .premium-btn {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+        }
+        /* Media queries for responsive design */
+@media (max-width: 768px) {
+    section {
+        padding: 10px;
+    }
+    h1, h2, h3 {
+        font-size: 1.5em;
+    }
+    button, a {
+        padding: 8px 16px;
+        width: 100%;
+    }
+    /* Grid adjustments for smaller screens */
+    .grid > div {
+        flex: 1 1 45%;
+        padding: 10px;
+    }
+    /* Social icons compact layout */
+    .social-grid {
+        gap: 8px;
+    }
+    .social-grid > div {
+        flex: 1 1 45%;
+        padding: 8px;
+        font-size: 12px;
+    }
+    .social-grid > div img {
+        max-width: 40px;
+    }
+    .social-grid > div a {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    /* Age verification adjustments */
+    .age-verification {
+        padding: 30px 10px;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+    /* Hide less critical sections on smaller screens */
+    .social-grid > div:nth-child(n+5) {
+        display: none; /* Hide less important social platforms (YouTube, Snapchat, Fansly, ManyVids) */
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 1.2em;
+    }
+    .grid > div {
+        flex: 1 1 100%;
+    }
+    .social-grid > div {
+        flex: 1 1 100%;
+        margin-bottom: 10px;
+    }
+    .social-grid > div:last-child {
+        margin-bottom: 0;
+    }
+    /* Further hide elements for very small screens */
+    .grid > div:nth-child(n+4) {
+        display: none; /* Hide extra photo and video cards to reduce clutter */
+    }
+    .age-verification {
+        padding: 20px 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Kawaii floating elements -->
+    <div id="kawaii-container"></div>
+    
+    <!-- Glow effects -->
+    <div class="glow" style="top: 10%; left: 5%;"></div>
+    <div class="glow" style="bottom: 15%; right: 10%;"></div>
+    <div class="glow glow-small" style="top: 30%; right: 15%;"></div>
+    <div class="glow glow-small" style="bottom: 25%; left: 20%;"></div>
+    
+    <!-- Diamond sparkles -->
+    <div id="diamond-container"></div>
+    
+    <!-- Age Verification Modal -->
+    <div class="modal" id="ageModal">
+        <div class="modal-content">
+            <h2 class="modal-title">Age Verification</h2>
+            <p class="modal-text">
+                This content contains adult material and is only for viewers 18 years or older. 
+                By entering, you confirm that you are at least 18 years of age or the legal age 
+                in your jurisdiction to view such content.
+            </p>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-confirm" id="modalConfirm">Yes, I'm 18+</button>
+                <button class="modal-btn modal-deny" id="modalDeny">No, I'm under 18</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class="logo">Bella Lynn<i class="ri-flower-line"></i></h1>
+            <p class="tagline">Your exclusive kawaii experience ~</p>
+            
+            <div class="profile-container">
+                <img src="logo.png" alt="Bella Lynn" class="profile">
+                <div class="hearts heart-1"><i class="fas fa-heart"></i></div>
+                <div class="hearts heart-2"><i class="fas fa-heart"></i></div>
+                <div class="hearts heart-3"><i class="fas fa-heart"></i></div>
+            </div>
+        </header>
+        
+        <!-- Polaroid Gallery - Expanded -->
+        <div class="polaroid-gallery">
+            <!-- Polaroid 1 -->
+            <div class="polaroid">
+                <img src="1.png" alt="Bella Lynn" class="polaroid-img">
+                <div class="polaroid-overlay">
+                    <h3>Exclusive Content</h3>
+                    <p>You must be 18+ to view my private collection</p>
+                    <button class="age-verify-btn" id="verifyBtn1">Verify Age</button>
+                </div>
+                <div class="polaroid-caption">Bella ~ Kawaii</div>
+            </div>
+            
+            <!-- Polaroid 2 -->
+            <div class="polaroid">
+                <img src="2.png" alt="Bella Lynn" class="polaroid-img">
+                <div class="polaroid-overlay">
+                    <h3>Premium Photos</h3>
+                    <p>Access my exclusive adult content</p>
+                    <button class="age-verify-btn" id="verifyBtn2">Verify Age</button>
+                </div>
+                <div class="polaroid-caption">Bella ~ Cute</div>
+            </div>
+            
+            <!-- Polaroid 3 -->
+            <div class="polaroid">
+                <img src="3.png" alt="Bella Lynn" class="polaroid-img">
+                <div class="polaroid-overlay">
+                    <h3>Private Collection</h3>
+                    <p>18+ only to view my spicy content</p>
+                    <button class="age-verify-btn" id="verifyBtn3">Verify Age</button>
+                </div>
+                <div class="polaroid-caption">Bella ~ Sweet</div>
+            </div>
+            
+            <!-- Polaroid 4 - New -->
+            <div class="polaroid">
+                <img src="4.png" alt="Bella Lynn" class="polaroid-img">
+                <div class="polaroid-overlay">
+                    <h3>VIP Access</h3>
+                    <p>Unlock my most exclusive adult content</p>
+                    <button class="age-verify-btn" id="verifyBtn4">Verify Age</button>
+                </div>
+                <div class="polaroid-caption">Bella ~ Dream</div>
+            </div>
+            
+            <!-- Polaroid 5 - New -->
+            <div class="polaroid">
+                <img src="5.png" alt="Bella Lynn" class="polaroid-img">
+                <div class="polaroid-overlay">
+                    <h3>Lingerie Set</h3>
+                    <p>View my premium boudoir photos</p>
+                    <button class="age-verify-btn" id="verifyBtn5">Verify Age</button>
+                </div>
+                <div class="polaroid-caption">Bella ~ Angel</div>
+            </div>
+            
+            <!-- Polaroid 6 - New -->
+            <div class="polaroid">
+                <img src="6.png" alt="Bella Lynn" class="polaroid-img">
+                <div class="polaroid-overlay">
+                    <h3>Naughty & Nice</h3>
+                    <p>See both sides of my personality</p>
+                    <button class="age-verify-btn" id="verifyBtn6">Verify Age</button>
+                </div>
+                <div class="polaroid-caption">Bella ~ Devil</div>
+            </div>
+        </div>
+        
+        <!-- New Video Showcase Section -->
+        <div class="video-showcase">
+            <h2 class="section-title">My Exclusive Videos</h2>
+            <div class="video-container">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <img src="video1-thumb.jpg" alt="Video 1" class="video-thumbnail">
+                    <div class="video-play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Kawaii Morning Routine</h3>
+                        <p class="video-desc">Watch my sexy morning routine with a kawaii twist</p>
+                        <button class="video-btn" onclick="showAgeModal()">Watch Now</button>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <img src="video2-thumb.jpg" alt="Video 2" class="video-thumbnail">
+                    <div class="video-play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Lingerie Try-On Haul</h3>
+                        <p class="video-desc">See me try on my favorite kawaii lingerie sets</p>
+                        <button class="video-btn" onclick="showAgeModal()">Watch Now</button>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <img src="video3-thumb.jpg" alt="Video 3" class="video-thumbnail">
+                    <div class="video-play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Bubble Bath Fun</h3>
+                        <p class="video-desc">Join me for a playful bubble bath session</p>
+                        <button class="video-btn" onclick="showAgeModal()">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Premium Features - Enhanced -->
+        <div class="premium-features">
+            <h2 class="features-title">VIP Experiences</h2>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3 class="feature-title">Premium Chat</h3>
+                    <p class="feature-desc">
+                        Get personal 1-on-1 chats with me. Share your fantasies and get my undivided attention!
+                        Flirty conversations and personalized messages just for you.
+                    </p>
+                    <button class="feature-btn" onclick="showAgeModal()">Start Chatting</button>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="feature-title">Spicy Content</h3>
+                    <p class="feature-desc">
+                        Access my hottest exclusive content - lingerie, implied nudes, and sensual videos 
+                        that you won't find anywhere else! Updated weekly.
+                    </p>
+                    <button class="feature-btn" onclick="showAgeModal()">Get Access</button>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="feature-title">Custom Videos</h3>
+                    <p class="feature-desc">
+                        Request personalized videos just for you with your special requests! 
+                        Tell me what you'd like to see and I'll make it happen.
+                    </p>
+                    <button class="feature-btn" onclick="showAgeModal()">Order Now</button>
+                </div>
+        </div>
+        
+        <!-- New Exclusive Content Section -->
+        <div class="exclusive-content">
+            <h2 class="section-title">Premium Content Packages</h2>
+            <div class="content-grid">
+                <!-- Package 1 -->
+                <div class="content-card">
+                    <img src="package1.jpg" alt="Starter Package" class="content-img">
+                    <div class="content-info">
+                        <h3 class="content-title">Starter Package</h3>
+                        <p class="content-desc">Perfect for new fans - includes 10 exclusive photos and 1 video</p>
+                        <div class="content-price">$29.99</div>
+                        <button class="feature-btn" onclick="showAgeModal()">Get Now</button>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="content-card">
+                    <img src="package2.jpg" alt="Deluxe Package" class="content-img">
+                    <div class="content-info">
+                        <h3 class="content-title">Deluxe Package</h3>
+                        <p class="content-desc">25 photos, 3 videos, and a personal thank you message</p>
+                        <div class="content-price">$59.99</div>
+                        <button class="feature-btn" onclick="showAgeModal()">Get Now</button>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="content-card">
+                    <img src="package3.jpg" alt="VIP Package" class="content-img">
+                    <div class="content-info">
+                        <h3 class="content-title">VIP Package</h3>
+                        <p class="content-desc">50+ photos, 5 videos, and a 5-minute custom video just for you</p>
+                        <div class="content-price">$99.99</div>
+                        <button class="feature-btn" onclick="showAgeModal()">Get Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Social Grid - Enhanced -->
+        <div class="social-grid">
+            <!-- Instagram -->
+            <div class="social-card instagram">
+                <div class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h3 class="social-name">Instagram</h3>
+                <p class="social-username">@bella.lynn</p>
+                <a href="https://instagram.com/bella.lynn" class="social-btn">Follow</a>
+            </div>
+            
+            <!-- OnlyFans -->
+            <div class="social-card onlyfans">
+                <div class="social-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="social-name">OnlyFans</h3>
+                <p class="social-username">Exclusive Adult Content</p>
+                <a href="https://onlyfans.com/bella.lynn" class="social-btn">Join Now</a>
+            </div>
+            
+            <!-- Twitter -->
+            <div class="social-card twitter">
+                <div class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <h3 class="social-name">Twitter</h3>
+                <p class="social-username">@bella_lynn</p>
+                <a href="https://twitter.com/bella_lynn" class="social-btn">Follow</a>
+            </div>
+            
+            <!-- TikTok -->
+            <div class="social-card tiktok">
+                <div class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+                <h3 class="social-name">TikTok</h3>
+                <p class="social-username">@bella.lynn</p>
+                <a href="https://tiktok.com/@bella.lynn" class="social-btn">Follow</a>
+            </div>
+            
+            <!-- YouTube -->
+            <div class="social-card youtube">
+                <div class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <h3 class="social-name">YouTube</h3>
+                <p class="social-username">Bella Lynn</p>
+                <a href="https://youtube.com/bella.lynn" class="social-btn">Subscribe</a>
+            </div>
+            
+            <!-- Snapchat -->
+            <div class="social-card snapchat">
+                <div class="social-icon">
+                    <i class="fab fa-snapchat-ghost"></i>
+                </div>
+                <h3 class="social-name">Snapchat</h3>
+                <p class="social-username">bella.lynn</p>
+                <a href="https://snapchat.com/add/bella.lynn" class="social-btn">Add Me</a>
+            </div>
+            
+            <!-- Fansly - New -->
+            <div class="social-card twitter">
+                <div class="social-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="social-name">Fansly</h3>
+                <p class="social-username">Exclusive Content</p>
+                <a href="https://fansly.com/bella.lynn" class="social-btn">Join Now</a>
+            </div>
+            
+            <!-- ManyVids - New -->
+            <div class="social-card instagram">
+                <div class="social-icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <h3 class="social-name">ManyVids</h3>
+                <p class="social-username">Premium Videos</p>
+                <a href="https://manyvids.com/bella.lynn" class="social-btn">View Store</a>
+            </div>
+        </div>
+        
+        <!-- Premium CTA - Enhanced -->
+        <div class="premium-cta">
+            <h2 class="premium-title">Join My Kawaii World</h2>
+            <p class="premium-text">
+                Get access to my cutest exclusive adult content, private messages, custom requests, 
+                and much more. My premium platform offers you an intimate connection with the kawaii 
+                experience you love! Subscribe now for instant access to all my content.
+            </p>
+            <a href="https://onlyfans.com/bella.lynn" class="premium-btn">Join Now <i class="fas fa-heart"></i></a>
+        </div>
+        
+        <footer>
+            © 2023 Bella Lynn | All Rights Reserved | Must be 18+ to view content | Terms of Service | Privacy Policy
+        </footer>
+    </div>
+
+    <script>
+        // Create kawaii floating elements
+        function createKawaiiElements() {
+            const container = document.getElementById('kawaii-container');
+            const elements = ['heart', 'star', 'kiss-wink-heart', 'grin-hearts', 'laugh-squint', 'gift', 'crown', 'gem'];
+            const colors = ['#ff6b8b', '#ff1493', '#ffcce6', '#ffffff', '#b9f2ff'];
+            
+            for (let i = 0; i < 40; i++) {
+                const element = document.createElement('div');
+                element.classList.add('kawaii');
+                const icon = elements[Math.floor(Math.random() * elements.length)];
+                element.innerHTML = `<i class="fas fa-${icon}"></i>`;
+                element.style.color = colors[Math.floor(Math.random() * colors.length)];
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.bottom = -50 + 'px';
+                element.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                element.style.animationDuration = (Math.random() * 25 + 15) + 's';
+                element.style.animationDelay = (Math.random() * 10) + 's';
+                container.appendChild(element);
+            }
+        }
+        
+        // Create diamond sparkles
+        function createDiamondSparkles() {
+            const container = document.getElementById('diamond-container');
+            const positions = [
+                { top: '10%', left: '15%', delay: '0s' },
+                { top: '20%', left: '80%', delay: '1s' },
+                { top: '50%', left: '10%', delay: '2s' },
+                { top: '70%', left: '85%', delay: '0.5s' },
+                { top: '30%', left: '50%', delay: '1.5s' }
+            ];
+            
+            positions.forEach(pos => {
+                const diamond = document.createElement('div');
+                diamond.classList.add('diamond');
+                diamond.style.top = pos.top;
+                diamond.style.left = pos.left;
+                diamond.style.animationDelay = pos.delay;
+                container.appendChild(diamond);
+            });
+        }
+        
+        // Age verification
+        function verifyAge() {
+            const images = document.querySelectorAll('.polaroid-img, .video-thumbnail, .content-img');
+            const overlays = document.querySelectorAll('.polaroid-overlay');
+            
+            images.forEach(img => {
+                img.style.filter = 'blur(0)';
+                if (img.classList.contains('polaroid-img')) {
+                    img.style.transform = 'scale(1)';
+                }
+            });
+            
+            overlays.forEach(overlay => {
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
+            });
+            
+            // Store verification in localStorage
+            localStorage.setItem('ageVerified', 'true');
+            document.getElementById('ageModal').style.display = 'none';
+            
+            // Show welcome message
+        }
+        
+        function createSparkleText(title, message) {
+            const sparkleText = document.createElement('div');
+            sparkleText.style.position = 'fixed';
+            sparkleText.style.top = '50%';
+            sparkleText.style.left = '50%';
+            sparkleText.style.transform = 'translate(-50%, -50%)';
+            sparkleText.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+            sparkleText.style.padding = '30px 50px';
+            sparkleText.style.borderRadius = '20px';
+            sparkleText.style.boxShadow = '0 20px 50px rgba(255, 20, 147, 0.6)';
+            sparkleText.style.zIndex = '1000';
+            sparkleText.style.textAlign = 'center';
+            sparkleText.style.maxWidth = '80%';
+            
+            const titleEl = document.createElement('h2');
+            titleEl.textContent = title;
+            titleEl.style.fontSize = '2rem';
+            titleEl.style.marginBottom = '15px';
+            titleEl.style.background = 'linear-gradient(to right, var(--hot-pink), var(--purple))';
+            titleEl.style.webkitBackgroundClip = 'text';
+            titleEl.style.backgroundClip = 'text';
+            titleEl.style.color = 'transparent';
+            
+            const messageEl = document.createElement('p');
+            messageEl.textContent = message;
+            messageEl.style.fontSize = '1.2rem';
+            messageEl.style.color = '#333';
+            
+            sparkleText.appendChild(titleEl);
+            sparkleText.appendChild(messageEl);
+            document.body.appendChild(sparkleText);
+            
+            // Add sparkles
+            for (let i = 0; i < 20; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('kawaii-sparkle');
+                sparkle.innerHTML = '<i class="fas fa-sparkle"></i>';
+                sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                sparkleText.appendChild(sparkle);
+            }
+            
+            setTimeout(() => {
+                sparkleText.style.transition = 'all 0.5s ease';
+                sparkleText.style.opacity = '0';
+                sparkleText.style.transform = 'translate(-50%, -60%)';
+                setTimeout(() => {
+                    sparkleText.remove();
+                }, 500);
+            }, 3000);
+        }
+        
+        function denyAgeVerification() {
+            window.location.href = "https://www.google.com";
+        }
+        
+        // Show age verification modal
+        function showAgeModal() {
+            if (localStorage.getItem('ageVerified') !== 'true') {
+                document.getElementById('ageModal').style.display = 'flex';
+            }
+        }
+        
+        // Add sparkle effect to elements on hover
+        function addSparkleEffect(element) {
+            element.addEventListener('mouseover', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('kawaii-sparkle');
+                sparkle.innerHTML = '<i class="fas fa-sparkle"></i>';
+                sparkle.style.color = '#ffffff';
+                sparkle.style.position = 'absolute';
+                sparkle.style.left = x + 'px';
+                sparkle.style.top = y + 'px';
+                sparkle.style.fontSize = '20px';
+                this.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 2000);
+            });
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createKawaiiElements();
+            createDiamondSparkles();
+            
+            // Check if already verified
+            if (localStorage.getItem('ageVerified') === 'true') {
+                verifyAge();
+            }
+            
+            // Add hover effect to social cards
+            document.querySelectorAll('.social-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.social-icon i');
+                    icon.style.transform = 'scale(1.3) rotate(10deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.social-icon i');
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                });
+                
+                addSparkleEffect(card);
+            });
+            
+            // Add hover effect to feature cards
+            document.querySelectorAll('.feature-card').forEach(card => {
+                addSparkleEffect(card);
+            });
+            
+            // Age verification buttons
+            document.querySelectorAll('.age-verify-btn, .video-btn, .feature-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (localStorage.getItem('ageVerified') !== 'true') {
+                        e.preventDefault();
+                        showAgeModal();
+                    }
+                });
+                addSparkleEffect(btn);
+            });
+            
+            // Modal buttons
+            document.getElementById('modalConfirm').addEventListener('click', verifyAge);
+            document.getElementById('modalDeny').addEventListener('click', denyAgeVerification);
+            
+            // Add sparkle effect to premium button
+            const premiumBtn = document.querySelector('.premium-btn');
+            addSparkleEffect(premiumBtn);
+            
+            // Add hover effect to polaroids
+            document.querySelectorAll('.polaroid').forEach(polaroid => {
+                polaroid.addEventListener('mouseenter', function() {
+                    const caption = this.querySelector('.polaroid-caption');
+                    caption.style.transform = 'translateY(-5px)';
+                });
+                
+                polaroid.addEventListener('mouseleave', function() {
+                    const caption = this.querySelector('.polaroid-caption');
+                    caption.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add click effect to video cards
+            document.querySelectorAll('.video-card').forEach(video => {
+                video.addEventListener('click', function() {
+                    if (localStorage.getItem('ageVerified') === 'true') {
+                        // In a real implementation, this would open the video
+                        createSparkleText('Video Playing', 'Enjoy the exclusive content!');
+                    } else {
+                        showAgeModal();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
