@@ -1,14 +1,844 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Stream Player</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Lynn - Kawaii Seduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff9eb7;
+            --hot-pink: #ff6b8b;
+            --light-pink: #ffd6e7;
+            --white: #ffffff;
+            --soft-shadow: 0 4px 15px rgba(255, 107, 139, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-pink);
+            min-height: 100vh;
+            color: #5a3a4a;
+        }
+        
+        /* Age Verification Overlay */
+        .age-verification-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 214, 231, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .age-verification {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: var(--soft-shadow);
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Floating elements background */
+        .floating-element {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: float 15s linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .verification-logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--hot-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .verification-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            border: 5px solid var(--white);
+            box-shadow: var(--soft-shadow);
+        }
+        
+        .verification-message {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #5a3a4a;
+        }
+        
+        .verification-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--soft-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-confirm {
+            background: var(--hot-pink);
+            color: var(--white);
+        }
+        
+        .btn-deny {
+            background: var(--white);
+            color: var(--hot-pink);
+            border: 2px solid var(--hot-pink);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .verification-footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #7a5a6a;
+            opacity: 0.8;
+        }
+        
+        /* Warning Modal */
+        .warning-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            display: none;
+        }
+        
+        .warning-content {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .warning-title {
+            font-size: 1.8rem;
+            color: var(--hot-pink);
+            margin-bottom: 15px;
+        }
+        
+        .warning-text {
+            margin-bottom: 25px;
+            font-size: 1rem;
+            color: #5a3a4a;
+            line-height: 1.6;
+        }
+        
+        .warning-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        /* Main Content (hidden until verification) */
+        .main-content {
+            display: none;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--hot-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 5px solid var(--white);
+            box-shadow: var(--soft-shadow);
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: #7a5a6a;
+            margin-bottom: 20px;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+        
+        .stat {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 100px;
+            box-shadow: var(--soft-shadow);
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--hot-pink);
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #7a5a6a;
+        }
+        
+        /* Wishlist Button - Enhanced */
+        .wishlist-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 14px 28px;
+            background: var(--white);
+            color: var(--hot-pink);
+            border: 3px solid var(--hot-pink);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 18px rgba(255, 107, 139, 0.4);
+            text-align: center;
+            max-width: 220px;
+        }
+        .wishlist-btn:hover {
+            background: var(--hot-pink);
+            color: var(--white);
+            transform: translateY(-4px) scale(1.05);
+        }
+        
+        /* Premium Spicy Section */
+        .premium-cta {
+            background: linear-gradient(130deg, var(--hot-pink), #ff3d6e);
+            color: white;
+            border-radius: 15px;
+            padding: 0;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: var(--soft-shadow);
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .premium-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .premium-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--hot-pink);
+            opacity: 0.6;
+            backdrop-filter: blur(4px);
+            z-index: 2;
+        }
+        
+        .premium-content {
+            position: relative;
+            z-index: 3;
+            padding: 30px;
+        }
+        
+        .premium-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .premium-text {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .cta-btn {
+            padding: 12px 30px;
+            background: white;
+            color: var(--hot-pink);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Social Links */
+        .social-section {
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--hot-pink);
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .social-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--soft-shadow);
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Social Card Hover Effects */
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                            rgba(255,255,255,0.1) 0%, 
+                            rgba(255,255,255,0.3) 50%, 
+                            rgba(255,255,255,0.1) 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .social-card:hover::before {
+            transform: translateX(100%);
+        }
+        
+        /* Platform-specific colors */
+        .social-card[href*="instagram"]:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+        }
+        
+        .social-card[href*="onlyfans"]:hover {
+            background: linear-gradient(45deg, #00aff0, #005fce);
+            color: white;
+        }
+        
+        .social-card[href*="twitter"]:hover {
+            background: #1DA1F2;
+            color: white;
+        }
+        
+        .social-card[href*="tiktok"]:hover {
+            background: #000;
+            color: white;
+        }
+        
+        .social-card[href*="twitch"]:hover {
+            background: #9146FF;
+            color: white;
+        }
+        
+        .social-card[href*="youtube"]:hover {
+            background: #FF0000;
+            color: white;
+        }
+        
+        .social-card[href*="facebook"]:hover {
+            background: #1877F2;
+            color: white;
+        }
+        
+        .social-card:hover .social-icon {
+            color: white;
+        }
+        
+        .social-card:hover .social-username {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .social-card:hover .social-btn {
+            background: white;
+            color: var(--hot-pink);
+        }
+        
+        .social-icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: var(--hot-pink);
+            width: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        
+        .social-info {
+            flex: 1;
+            z-index: 2;
+        }
+        
+        .social-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-username {
+            font-size: 0.9rem;
+            color: #7a5a6a;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn {
+            padding: 8px 15px;
+            background: var(--hot-pink);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            font-size: 0.8rem;
+            color: #7a5a6a;
+        }
+        
+        /* Responsive */
+        @media (min-width: 600px) {
+            .social-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .verification-buttons, .warning-buttons {
+                flex-direction: row;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .age-verification, .warning-content {
+                padding: 30px 20px;
+            }
+            
+            .verification-logo, .warning-title {
+                font-size: 2.2rem;
+            }
+            
+            .verification-buttons, .warning-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .stats {
+                gap: 10px;
+            }
+            
+            .stat {
+                min-width: 80px;
+                padding: 10px;
+            }
+            
+            .premium-cta {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
-   <iframe id="framez" src="https://cdn.crichd-stop.ru/embed2.php?id=skyten
-   " width="600" height="400" frameborder="0" allowfullscreen></iframe>
+    <!-- Age Verification Overlay -->
+    <div class="age-verification-overlay" id="ageVerification">
+        <div class="age-verification">
+            <div id="floating-container"></div>
+            <div class="verification-logo">Bella Lynn <i class="ri-flower-line"></i></div>
+            <div class="verification-message">
+                To access my exclusive content, you must be 18 years or older
+            </div>
+            <img src="logo.png" class="verification-img" alt="Bella Lynn">
+            <div class="verification-message">
+                Please confirm your age to continue
+            </div>
+            <div class="verification-buttons">
+                <button class="btn btn-confirm" id="confirmBtn">I'm 18 or older</button>
+                <button class="btn btn-deny" id="denyBtn">I'm under 18</button>
+            </div>
+            <div class="verification-footer">
+                By continuing, you confirm you meet the age requirements for this content
+            </div>
+        </div>
+    </div>
+    
+    <!-- 18+ Warning Modal -->
+    <div class="warning-modal" id="warningModal">
+        <div class="warning-content">
+            <h2 class="warning-title">18+ Content Warning</h2>
+            <p class="warning-text">
+                This page contains adult content intended for viewers 18 years or older. 
+                By continuing, you confirm that you are of legal age to view this content.
+            </p>
+            <div class="warning-buttons">
+                <button class="btn btn-confirm" id="continueBtn">Continue</button>
+                <button class="btn btn-deny" id="leaveBtn">Leave</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content (hidden until verification) -->
+    <div class="main-content" id="mainContent">
+        <div class="container">
+            <header>
+                <h1 class="logo">Bella Lynn</h1>
+                <p class="tagline">Your kawaii seduction queen</p>
+                
+                <img src="logo.png" alt="Bella Lynn" class="profile-img">
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">650K+</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10M+</div>
+                        <div class="stat-label">Likes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Kawaii</div>
+                    </div>
+                </div>
+                
+                <button class="wishlist-btn">
+                    <i class="fas fa-heart"></i> My Wishlist
+                </button>
+            </header>
+            
+            <!-- Premium Spicy Section -->
+            <div class="premium-cta">
+                <img src="banner.png" alt="Premium Content" class="premium-image">
+                <div class="premium-content">
+                    <h2 class="premium-title">Premium Spicy Chat</h2>
+                    <p class="premium-text">Chat with me Here</p>
+                    <button class="cta-btn">18+ Click Here</button>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-section">
+                <h2 class="section-title">Find Me On</h2>
+                <div class="social-grid">
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/bella.lynn" class="social-card">
+                        <div class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">Instagram</h3>
+                            <p class="social-username">@bella_lynn</p>
+                        </div>
+                        <button class="social-btn">Follow</button>
+                    </a>
+                    
+                    <!-- OnlyFans -->
+                    <a href="https://onlyfans.com/bella.lynn" class="social-card">
+                        <div class="social-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">OnlyFans</h3>
+                            <p class="social-username">Exclusive Content</p>
+                        </div>
+                        <button class="social-btn">Unlock</button>
+                    </a>
+                    
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/bella_lynn" class="social-card">
+                        <div class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">Twitter</h3>
+                            <p class="social-username">@bella_lynn</p>
+                        </div>
+                        <button class="social-btn">Follow</button>
+                    </a>
+                    
+                    <!-- TikTok -->
+                    <a href="https://tiktok.com/@bella.lynn" class="social-card">
+                        <div class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">TikTok</h3>
+                            <p class="social-username">@bella.lynn</p>
+                        </div>
+                        <button class="social-btn">Follow</button>
+                    </a>
+                    
+                    <!-- Twitch -->
+                    <a href="https://twitch.tv/bella.lynn" class="social-card">
+                        <div class="social-icon">
+                            <i class="fab fa-twitch"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">Twitch</h3>
+                            <p class="social-username">Live Streams</p>
+                        </div>
+                        <button class="social-btn">Follow</button>
+                    </a>
+                    
+                    <!-- YouTube -->
+                    <a href="https://youtube.com/bella.lynn" class="social-card">
+                        <div class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">YouTube</h3>
+                            <p class="social-username">Videos & More</p>
+                        </div>
+                        <button class="social-btn">Subscribe</button>
+                    </a>
+                    
+                    <!-- Facebook -->
+                    <a href="https://facebook.com/bella.lynn" class="social-card">
+                        <div class="social-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">Facebook</h3>
+                            <p class="social-username">@bella.lynn</p>
+                        </div>
+                        <button class="social-btn">Follow</button>
+                    </a>
+                </div>
+            </div>
+            
+            <footer>
+                © 2025 Bella Lynn | All Rights Reserved
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Create floating elements
+        function createFloatingElements() {
+            const container = document.getElementById('floating-container');
+            const elements = ['heart', 'star', 'flower', 'cloud', 'sparkle'];
+            
+            for (let i = 0; i < 12; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                const icon = elements[Math.floor(Math.random() * elements.length)];
+                if (icon === 'flower') {
+                    element.innerHTML = '<i class="ri-flower-line"></i>';
+                } else if (icon === 'cloud') {
+                    element.innerHTML = '<i class="ri-cloud-line"></i>';
+                } else {
+                    element.innerHTML = `<i class="fas fa-${icon}"></i>`;
+                }
+                
+                element.style.color = `hsl(${Math.random() * 30 + 330}, 100%, 75%)`;
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.bottom = -50 + 'px';
+                element.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                element.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                element.style.animationDelay = (Math.random() * 5) + 's';
+                container.appendChild(element);
+            }
+        }
+        
+        // Age Verification
+        function checkAgeVerification() {
+            const ageVerified = localStorage.getItem('ageVerified') === 'true';
+            const ageVerification = document.getElementById('ageVerification');
+            const mainContent = document.getElementById('mainContent');
+            
+            if (ageVerified) {
+                ageVerification.style.display = 'none';
+                // Show warning modal first
+                document.getElementById('warningModal').style.display = 'flex';
+            } else {
+                ageVerification.style.display = 'flex';
+                mainContent.style.display = 'none';
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createFloatingElements();
+            checkAgeVerification();
+            
+            // Age verification buttons
+            document.getElementById('confirmBtn').addEventListener('click', () => {
+                localStorage.setItem('ageVerified', 'true');
+                checkAgeVerification();
+            });
+            
+            document.getElementById('denyBtn').addEventListener('click', () => {
+                alert('You must be 18 or older to access this content.');
+                window.location.href = "https://www.google.com";
+            });
+            
+            // Warning modal buttons
+            document.getElementById('continueBtn').addEventListener('click', () => {
+                document.getElementById('warningModal').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+            });
+            
+            document.getElementById('leaveBtn').addEventListener('click', () => {
+                window.location.href = "https://www.google.com";
+            });
+            
+            // Wishlist functionality
+            document.querySelector('.wishlist-btn')?.addEventListener('click', function() {
+                alert('Your wishlist will be shown here! Coming soon!');
+            });
+            
+            // CTA button functionality
+            document.querySelector('.cta-btn')?.addEventListener('click', function() {
+                alert('Redirecting to premium content...');
+                // In a real implementation, this would link to the premium page
+            });
+            
+            // Button hover effects
+            document.querySelectorAll('.btn, .social-btn, .cta-btn').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 8px 20px rgba(255, 107, 139, 0.3)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'var(--soft-shadow)';
+                });
+            });
+        });
+    </script>
 </body>
-<script>var iframe = document.getElementById("framez");
-iframe.setAttribute("sandbox", "allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-scripts allow-top-navigation allow-forms");</script>
 </html>
