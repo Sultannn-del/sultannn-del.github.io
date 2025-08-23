@@ -3,12 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reedstreams - Free Live Sports Streaming</title>
+    <title>Reedstreams - DMCA Policy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    
+/* DMCA Section */
+.dmca-section {
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 80px auto 3rem;
+    background: var(--darker);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dmca-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(0, 195, 255, 0.05) 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(255, 58, 0, 0.05) 0%, transparent 30%);
+    pointer-events: none;
+}
+
+.dmca-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.dmca-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-family: 'Oxanium', 'Arial Black', sans-serif;
+    text-align: center;
+}
+
+.dmca-updated {
+    font-size: 1rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.dmca-content h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--light);
+    margin: 2rem 0 1rem;
+    font-family: 'Oxanium', 'Arial Black', sans-serif;
+}
+
+.dmca-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.dmca-content ul {
+    list-style: disc;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+</style>
 <body>
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
@@ -28,7 +98,7 @@
         </div>
         
         <div class="mobile-menu-links">
-            <a href="index.html" style="text-decoration: underline;" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="index.html" style="none: underline;" class="active"><i class="fas fa-home"></i> Home</a>
             <a href="#sports-container"><i class="fas fa-futbol"></i> Football/NFL</a>
             <a href="#sports-container"><i class="fas fa-baseball-ball"></i> Baseball</a>
             <a href="channels/Sky-Sports-Cricket.html"><i class="fas fa-table-tennis"></i> Cricekt</a>
@@ -70,120 +140,76 @@
         </nav>
     </header>
 
-    <!-- Sports Categories -->
-    <section id="footer-for" class="sports-categories">
-        <div class="section-header">
-            <h2 class="section-title">Popular Sports</h2>
-        </div>
-        <div id="sports-container" class="sports-grid"></div>
-        <div id="match-list" class="match-list"></div>
-        
 
-    </section>
+    <!-- DMCA Section -->
+    <section class="dmca-section">
+        <div class="dmca-content">
+            <h1 class="dmca-title">DMCA Policy</h1>
+            <p class="dmca-updated">Last Updated: June 12, 2025</p>
 
-    <!-- Sports Streaming Categories -->
-    <section class="sports-categories">
-        <div class="sports-grid">
-            <!-- Cricket Card -->
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-baseball-ball"></i>
-                </div>
-                <h3 class="category-name">Cricket</h3>
-                <p class="category-matches">International matches</p>
-                <a href="channels/Sky-Sports-Cricket.html" class="btn btn-primary btn-sm">
-                    <i class="fas fa-play"></i>
-                    Watch Now
-                </a>
-            </div>
-
-            <!-- Tennis Card -->
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-table-tennis"></i>
-                </div>
-                <h3 class="category-name">Tennis</h3>
-                <p class="category-matches">Grand Slam events</p>
-                <a href="channels/Sky-Sports-F1.html" class="btn btn-primary btn-sm">
-                    <i class="fas fa-play"></i>
-                    Watch Now
-                </a>
-            </div>
-            
-            <!-- Formula 1 Card -->
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-flag-checkered"></i>
-                </div>
-                <h3 class="category-name">Formula 1</h3>
-                <p class="category-matches">Races & Qualifying</p>
-                <a href="channels/Sky-Sports-Tennis.html" class="btn btn-primary btn-sm">
-                    <i class="fas fa-play"></i>
-                    Watch Now
-                </a>
-            </div>
-
-            <!-- Cricket Card -->
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-baseball-ball"></i>
-                </div>
-                <h3 class="category-name">Cricket 2</h3>
-                <p class="category-matches">International matches</p>
-                <a href="#" class="btn btn-primary btn-sm">
-                    <i class="fas fa-play"></i>
-                    Watch Now
-                </a>
-            </div>
-                            
-            <!-- Golf Card -->
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="ri-lock-star-line"></i>
-                </div>
-                <h3 class="category-name">Premier League</h3>
-                <p class="category-matches">Sky-Premier</p>
-                <a href="channels/Sky-Sports-Premium.html" class="btn btn-primary btn-sm">
-                    <i class="fas fa-play"></i>
-                    Watch Now
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="about-content">
-            <h2 class="about-title">Free Live Sports Streaming</h2>
-            <p class="about-text">
-                There are <span class="highlight">hundreds of sports</span> and millions of people play sport every day all around the world. Even more love to watch sport and here you can watch sport <span class="highlight">free online</span> on Reedstreams.
+            <h2>1. DMCA Compliance</h2>
+            <p>
+                Reedstreams ("we," "us," or "our") respects the intellectual property rights of others and complies with the provisions of the Digital Millennium Copyright Act (DMCA). This DMCA Policy outlines our procedures for handling copyright infringement claims related to our website (the "Service").
             </p>
-            
-            <p class="about-text">
-                Let's start with football. We cover the <span class="highlight">NCAAF</span> so you get to see the next generation. And, of course we cover all the <span class="highlight">NFL</span>. Regular season? Check. Play-offs? Check. Bowls? Check. Superbowl? Check. And it's the same for <span class="highlight">MLB, NHL, NBA</span>, etc, etc. Think of a sport… we cover it. Have you ever wanted to watch a big game but you spent ages looking for a working stream? Or worse, that live sport streaming kept buffering or stopping? The search is over, you have arrived at your destination. <span class="highlight">Reliability and quality. Guaranteed.</span>
+            <p>
+                Reedstreams does not host, upload, or store any streaming content on our servers. Our Service acts solely as an aggregator of links to live sports streams hosted by third-party providers. All videos and streams accessible through our Service are hosted on external platforms that are freely available online. As such, we do not control the content, quality, or availability of these streams.
             </p>
-            
-            <p class="about-text">
-                Soccer is played everywhere and now you can watch it anywhere. From north to south and east to west we collect the largest number of soccer streams from every league and competition. Let's do the check test again. <span class="highlight">EPL? Check. La Liga? Check. Champions League? Check.</span> Oh boy, this is going to be a very long check list because we just cover everything.
+
+            <h2>2. Submitting a DMCA Takedown Notice</h2>
+            <p>
+                If you believe that content linked through Reedstreams infringes your copyright, we encourage you to contact the third-party hosting provider directly, as they are responsible for the content. However, if you wish to submit a DMCA takedown notice to Reedstreams to remove a link to allegedly infringing content, please provide a written notification containing the following information, as required by 17 U.S.C. § 512(c)(3):
             </p>
-            
-            <div class="about-points">
-                <div class="about-point">
-                    <div class="point-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3 class="point-title">Worldwide Coverage</h3>
-                    <p class="point-text">From ball sports to motorsports to combat sports, you can see it all on live streams. You are really going to need more time to watch everything we offer.</p>
-                </div>
-                
-                <div class="about-point">
-                    <div class="point-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3 class="point-title">Updated Schedule</h3>
-                    <p class="point-text">The schedule is always being checked and updated. And most games have multiple links so you have lots of choices. Want to watch PPVs free? You got it.</p>
-                </div>
-            </div>
+            <ul>
+                <li>A physical or electronic signature of the copyright owner or a person authorized to act on their behalf.</li>
+                <li>Identification of the copyrighted work claimed to have been infringed, or, if multiple works are covered, a representative list of such works.</li>
+                <li>Identification of the material claimed to be infringing, including the specific URL(s) of the link(s) on Reedstreams, to enable us to locate the material.</li>
+                <li>Your contact information, including your name, address, telephone number, and email address.</li>
+                <li>A statement that you have a good-faith belief that the use of the material is not authorized by the copyright owner, its agent, or the law.</li>
+                <li>A statement, made under penalty of perjury, that the information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.</li>
+            </ul>
+            <p>
+                Please send your DMCA takedown notice to our designated agent at: [insert contact email or link to contact page].
+            </p>
+            <p>
+                Upon receiving a valid DMCA notice, we will promptly remove or disable access to the identified link(s) and notify the third-party provider, if applicable. Please note that we may not have control over the actual content hosted by third-party platforms.
+            </p>
+
+            <h2>3. Counter-Notification</h2>
+            <p>
+                If you believe that a link was removed or disabled as a result of a DMCA takedown notice in error, you may submit a counter-notification in accordance with 17 U.S.C. § 512(g). Your counter-notification must include:
+            </p>
+            <ul>
+                <li>Your physical or electronic signature.</li>
+                <li>Identification of the material that was removed or disabled, including the URL(s) where it appeared on Reedstreams.</li>
+                <li>A statement, under penalty of perjury, that you have a good-faith belief that the material was removed or disabled as a result of mistake or misidentification.</li>
+                <li>Your name, address, telephone number, and email address.</li>
+                <li>A statement that you consent to the jurisdiction of the federal district court for the judicial district in which your address is located (or [insert jurisdiction, e.g., Delaware, USA] if you are outside the U.S.), and that you will accept service of process from the person who submitted the original DMCA notice.</li>
+            </ul>
+            <p>
+                Please send your counter-notification to: [insert contact email or link to contact page].
+            </p>
+            <p>
+                Upon receiving a valid counter-notification, we may restore the removed link(s) within 10-14 business days, unless the original complainant notifies us of a court action seeking to restrain the restoration.
+            </p>
+
+            <h2>4. Repeat Infringers</h2>
+            <p>
+                Reedstreams reserves the right to terminate access to our Service for users or third-party providers who are repeat infringers of copyright, as determined in our sole discretion.
+            </p>
+
+            <h2>5. Limitations</h2>
+            <p>
+                Reedstreams is not responsible for the content hosted by third-party providers. We act only as a conduit for linking to external streams and cannot guarantee the legality or accuracy of such content. Any disputes regarding the content itself should be directed to the hosting provider.
+            </p>
+
+            <h2>6. Contact Us</h2>
+            <p>
+                For DMCA notices, counter-notifications, or questions about this policy, please contact our designated DMCA agent at: [insert contact email or link to contact page].
+            </p>
+
+            <p class="dmca-disclaimer">
+                <strong>Disclaimer:</strong> Reedstreams does not host any streaming content. All streams are provided by external third-party services. We are not responsible for the content, quality, or legality of the streams linked on our platform. For copyright concerns, please contact the third-party hosting provider directly or submit a DMCA notice as outlined above.
+            </p>
         </div>
     </section>
 
@@ -280,7 +306,10 @@
                 resultsTitle = document.createElement('h2');
                 resultsTitle.id = 'search-results-title';
                 resultsTitle.style.display = 'none';
-                document.querySelector('.sports-categories').parentNode.insertBefore(resultsTitle, document.querySelector('.sports-categories'));
+                const dmcaSection = document.querySelector('.dmca-section');
+                if (dmcaSection) {
+                    dmcaSection.parentNode.insertBefore(resultsTitle, dmcaSection);
+                }
             }
 
             // Add clear buttons to search inputs
@@ -314,13 +343,13 @@
             categoryCards.forEach(card => {
                 card.style.display = 'block';
                 const nameEl = card.querySelector('.category-name');
-                nameEl.innerHTML = nameEl.textContent;
+                if (nameEl) nameEl.innerHTML = nameEl.textContent;
             });
 
             channelCards.forEach(card => {
                 card.style.display = 'block';
                 const nameEl = card.querySelector('.channel-name');
-                nameEl.innerHTML = nameEl.textContent;
+                if (nameEl) nameEl.innerHTML = nameEl.textContent;
             });
 
             if (normalizedQuery.length === 0) {
@@ -328,41 +357,9 @@
                 return;
             }
 
-            // Filter and highlight category cards
-            categoryCards.forEach(card => {
-                const nameEl = card.querySelector('.category-name');
-                const name = nameEl.textContent.toLowerCase();
-
-                if (name.includes(normalizedQuery)) {
-                    resultCount++;
-                    highlightText(nameEl, normalizedQuery);
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // Filter and highlight channel cards
-            channelCards.forEach(card => {
-                const nameEl = card.querySelector('.channel-name');
-                const name = nameEl.textContent.toLowerCase();
-
-                if (name.includes(normalizedQuery)) {
-                    resultCount++;
-                    highlightText(nameEl, normalizedQuery);
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // Update results title
-            if (resultCount > 0) {
-                resultsTitle.style.display = 'block';
-                resultsTitle.innerHTML = `Found ${resultCount} results for "${query}"`;
-                resultsTitle.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            } else {
-                resultsTitle.style.display = 'block';
-                resultsTitle.innerHTML = `No results found for "${query}"`;
-            }
+            // Since this is the DMCA page, no cards are present, show no results
+            resultsTitle.style.display = 'block';
+            resultsTitle.innerHTML = `No results found for "${query}"`;
         }
 
         function highlightText(element, searchText) {
@@ -404,7 +401,5 @@
             }
         }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="./main.js"></script>
 </body>
 </html>
